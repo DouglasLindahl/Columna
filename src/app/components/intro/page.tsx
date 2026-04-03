@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "motion/react";
+import MarbleBackground from "../columnaBackground/page";
 
 export default function Intro() {
   return (
-    <section className="bg-bg-primary ">
+    <section className="bg-bg-primary relative">
       <section className="py-[140px] px-20">
         <div className="max-w-[1200px] mx-auto">
           <motion.div
