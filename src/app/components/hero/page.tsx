@@ -10,11 +10,15 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col justify-center items-center gap-[140px] w-full">
         <section className="text-center flex flex-col justify-center items-center gap-[24px] text-bg-primary w-[60%]">
           <h1>Columna Group</h1>
-          <h2>Vi bygger strukturen bakom hållbara företag</h2>
+          <h2>
+            Vi bygger <span className="text-accent">strukturen</span> bakom
+            hållbara företag
+          </h2>
           <p>
-            En långsiktig partner för företag och entreprenörer som vill växa
-            med stabilitet, tydlig riktning och rätt förutsättningar från
-            början.
+            En långsiktig <span className="text-accent">partner</span> för
+            företag och entreprenörer som vill växa med{" "}
+            <span className="text-accent">stabilitet</span> , tydlig riktning
+            och rätt förutsättningar från början.
           </p>
         </section>
 
