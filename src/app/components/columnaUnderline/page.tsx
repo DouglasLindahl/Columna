@@ -1,13 +1,18 @@
 export default function ColumnaUnderline({
   width = "short", // "short" | "long"
-  color = "accent", // "accent" | "white"
+  color = "accent", // "accent" | "white" | "primary"
 }) {
   const widthClass =
     width === "long"
       ? "w-full left-0 translate-x-0"
       : "w-[60%] left-1/2 -translate-x-1/2";
 
-  const colorClass = color === "white" ? "via-white" : "via-accent";
+  const colorClass =
+    color === "white"
+      ? "via-white"
+      : color === "primary"
+        ? "via-bg-primary"
+        : "via-accent";
 
   return (
     <span className="relative block w-full mt-2 h-[2px]">

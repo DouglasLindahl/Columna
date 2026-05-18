@@ -4,7 +4,7 @@ import MarbleBackground from "../columnaBackground/page";
 
 export default function Plattformen() {
   return (
-    <section className="bg-bg-primary px-[128px] relative">
+    <section className=" px-[128px] relative">
       <section className="py-[140px] ">
         <div className=" mx-auto">
           <div className="grid grid-cols-2 gap-[64px] items-center">
@@ -15,16 +15,16 @@ export default function Plattformen() {
               transition={{ duration: 0.5 }}
             >
               <h2
-                className="text-white mb-6"
+                className="text-bg-primary mb-6"
                 style={{ fontSize: "40px", lineHeight: "1.3", fontWeight: 500 }}
               >
                 En struktur för långsiktig utveckling
               </h2>
               <p
+                className="text-bg-primary"
                 style={{
                   fontSize: "18px",
                   lineHeight: "1.7",
-                  color: "rgba(255,255,255,0.7)",
                 }}
               >
                 Columna Group fungerar som en plattform där nya samarbeten och

@@ -13,7 +13,7 @@ export default function Strukturen() {
   ];
 
   return (
-    <section className="bg-bg-primary text-text-primary text-center h-screen relative">
+    <section className="text-text-primary text-center h-screen relative">
       <section className="py-[140px] px-20">
         <div className="max-w-[1100px] mx-auto mb-12">
           <motion.div
@@ -23,7 +23,7 @@ export default function Strukturen() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-white mb-6">
+            <div className="text-bg-primary mb-6">
               <div className="inline-block">
                 <h2
                   style={{
@@ -39,22 +39,20 @@ export default function Strukturen() {
               </div>
             </div>
             <p
-              className="max-w-[700px] mx-auto"
+              className="max-w-[700px] mx-auto text-bg-primary"
               style={{
                 fontSize: "18px",
                 lineHeight: "1.7",
-                color: "rgba(255,255,255,0.7)",
               }}
             >
               Columna Group består av flera verksamheter inom olika områden, där
               varje bolag har sin roll i en större struktur
             </p>
             <p
-              className="max-w-[700px] mx-auto"
+              className="max-w-[700px] mx-auto text-bg-primary"
               style={{
                 fontSize: "18px",
                 lineHeight: "1.7",
-                color: "rgba(255,255,255,0.7)",
               }}
             >
               Tillsammans skapar de en plattform där kompetens, resurser och
@@ -62,7 +60,7 @@ export default function Strukturen() {
               verksamheter.
             </p>
           </motion.div>
-          <ColumnaUnderline width="long" color="white"></ColumnaUnderline>
+
           <motion.div
             className="grid grid-cols-4 gap-[48px] my-4 items-center"
             initial={{ opacity: 0, y: 30 }}
@@ -83,7 +81,6 @@ export default function Strukturen() {
               </div>
             ))}
           </motion.div>
-          <ColumnaUnderline width="long" color="white"></ColumnaUnderline>
         </div>
         <small className="text-accent">
           Fler verksamheter tillkommer som en del av Columna Groups fortsatta
