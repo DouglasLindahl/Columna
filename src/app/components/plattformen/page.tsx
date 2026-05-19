@@ -1,10 +1,14 @@
 "use client";
 import { motion } from "motion/react";
-import MarbleBackground from "../columnaBackground/page";
 
 export default function Plattformen() {
   return (
-    <section className=" px-[128px] relative">
+    <section id="platform" className=" px-[128px] relative">
+      <div className="pointer-events-none absolute right-10 top-1/2 -translate-y-1/2 rotate-[-90deg] translate-x-1/2 select-none">
+        <h5 className="text-[42px] font-medium tracking-[0.3em] text-black/5 whitespace-nowrap">
+          PLATTFORMEN
+        </h5>
+      </div>
       <section className="py-[140px] ">
         <div className=" mx-auto">
           <div className="grid grid-cols-2 gap-[64px] items-center">

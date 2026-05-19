@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Hero></Hero>
-      {/*<Intro></Intro>*/}
+      <Intro></Intro>
       <Plattformen></Plattformen>
       <Strukturen></Strukturen>
     </>

@@ -13,7 +13,15 @@ export default function Strukturen() {
   ];
 
   return (
-    <section className="text-text-primary text-center h-screen relative">
+    <section
+      id="structure"
+      className="text-text-primary text-center h-screen relative"
+    >
+      <div className="pointer-events-none absolute right-10 top-1/2 -translate-y-1/2 rotate-[-90deg] translate-x-1/2 select-none">
+        <h5 className="text-[42px] font-medium tracking-[0.3em] text-black/5 whitespace-nowrap">
+          STRUKTUREN
+        </h5>
+      </div>
       <section className="py-[140px] px-20">
         <div className="max-w-[1100px] mx-auto mb-12">
           <motion.div
