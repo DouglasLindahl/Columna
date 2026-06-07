@@ -1,29 +1,54 @@
 "use client";
+
 import { motion } from "motion/react";
 import ColumnaUnderline from "../columnaUnderline/page";
-import MarbleBackground from "../columnaBackground/page";
 
 export default function Strukturen() {
   const companies = [
-    { name: "Future Logistics AB", logo: "next.svg" },
-    { name: "LTSE AB", logo: "vercel.svg" },
-    { name: "Uppsikt Sverige AB", logo: "window.svg" },
-    { name: "Faunapoolen", logo: "globe.svg" },
-    { name: "Core Business Group", logo: "file.svg" },
+    {
+      name: "Future Logistics AB",
+      description:
+        "Transport och logistiklösningar för företag och verksamheter.",
+      url: "https://futurelogistics.se",
+    },
+    {
+      name: "LTSE AB",
+      description:
+        "Affärsutveckling och strategiska lösningar för långsiktig tillväxt.",
+      url: "https://ltse.se",
+    },
+    {
+      name: "Uppsikt Sverige AB",
+      description:
+        "Tillsyn, uppföljning och operativ kontroll inom olika verksamhetsområden.",
+      url: "https://uppsikt.se",
+    },
+    {
+      name: "Faunapoolen",
+      description: "Specialiserade tjänster inom naturvård, djur och miljö.",
+      url: "https://faunapoolen.se",
+    },
+    {
+      name: "Core Business Group",
+      description:
+        "Resurser och kompetens för företagsutveckling och expansion.",
+      url: "https://corebusinessgroup.se",
+    },
   ];
 
   return (
     <section
       id="structure"
-      className="text-text-primary text-center h-screen relative"
+      className="text-text-primary text-center min-h-screen relative"
     >
-      <div className="pointer-events-none absolute right-10 top-1/2 -translate-y-1/2 rotate-[-90deg] translate-x-1/2 select-none">
-        <h5 className="text-[42px] font-medium tracking-[0.3em] text-black/5 whitespace-nowrap">
+      <div className="pointer-events-none absolute right-30 top-1/2 -translate-y-1/2 rotate-[-90deg] translate-x-1/2 select-none">
+        <h5 className="text-[64px] font-medium tracking-[0.3em] text-black/5 whitespace-nowrap">
           STRUKTUREN
         </h5>
       </div>
-      <section className="py-[140px] px-20">
-        <div className="max-w-[1100px] mx-auto mb-12">
+
+      <section className="py-[140px] px-[256px]">
+        <div className="max-w-[1100px] mx-auto">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -43,9 +68,11 @@ export default function Strukturen() {
                 >
                   En del av Columna
                 </h2>
+
                 <ColumnaUnderline width="short" color="accent" />
               </div>
             </div>
+
             <p
               className="max-w-[700px] mx-auto text-bg-primary"
               style={{
@@ -54,10 +81,11 @@ export default function Strukturen() {
               }}
             >
               Columna Group består av flera verksamheter inom olika områden, där
-              varje bolag har sin roll i en större struktur
+              varje bolag har sin roll i en större struktur.
             </p>
+
             <p
-              className="max-w-[700px] mx-auto text-bg-primary"
+              className="max-w-[700px] mx-auto text-bg-primary mt-4"
               style={{
                 fontSize: "18px",
                 lineHeight: "1.7",
@@ -70,30 +98,38 @@ export default function Strukturen() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-4 gap-[48px] my-4 items-center"
+            className="grid grid-cols-3 gap-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {companies.map((company, index) => (
-              <div
+              <a
                 key={index}
-                className="flex items-center justify-center h-24 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border border-accent/30 p-8 text-left hover:border-accent hover:bg-accent/5 transition-all duration-300"
               >
-                <img
-                  src={company.logo}
-                  alt={company.name}
-                  className="max-h-10 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
+                <h3 className="text-[24px] font-medium text-bg-primary mb-4 group-hover:text-accent transition-colors">
+                  {company.name}
+                </h3>
+
+                <p className="text-bg-primary/75 leading-relaxed">
+                  {company.description}
+                </p>
+              </a>
             ))}
           </motion.div>
+
+          <div className="mt-12">
+            <small className="text-accent">
+              Fler verksamheter tillkommer som en del av Columna Groups
+              fortsatta utveckling.
+            </small>
+          </div>
         </div>
-        <small className="text-accent">
-          Fler verksamheter tillkommer som en del av Columna Groups fortsatta
-          utveckling.
-        </small>
       </section>
     </section>
   );
