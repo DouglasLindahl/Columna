@@ -22,20 +22,57 @@ export default function Plattformen() {
                 className="text-bg-primary mb-6"
                 style={{ fontSize: "40px", lineHeight: "1.3", fontWeight: 500 }}
               >
-                En struktur för långsiktig utveckling
+                Building Businesses Together
               </h2>
               <p
-                className="text-bg-primary"
+                className="text-bg-primary pt-6"
                 style={{
                   fontSize: "18px",
                   lineHeight: "1.7",
                 }}
               >
-                Columna Group fungerar som en plattform där nya samarbeten och
-                verksamheter tas in, struktureras och utvecklas vidare i rätt
-                sammanhang. Genom vår struktur och våra partners skapas
-                förutsättningar att placera varje verksamhet där den har bäst
-                möjlighet att växa långsiktigt.
+                Many successful businesses begin with a capable person, a strong
+                idea and the determination to build something of lasting value.
+              </p>
+              <p
+                className="text-bg-primary pt-6"
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "1.7",
+                }}
+              >
+                In selected opportunities, Columna becomes an active partner and
+                co-owner.
+              </p>
+              <p
+                className="text-bg-primary pt-6"
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "1.7",
+                }}
+              >
+                We contribute structure, experience, business development,
+                strategic guidance and long-term support while our partners
+                focus on leading and growing the business
+              </p>
+              <p
+                className="text-bg-primary pt-6"
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "1.7",
+                }}
+              >
+                The goal is simple:
+              </p>
+              <p
+                className="text-bg-primary pt-6"
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "1.7",
+                }}
+              >
+                To build independent, profitable businesses capable of creating
+                value for decades
               </p>
             </motion.div>
 

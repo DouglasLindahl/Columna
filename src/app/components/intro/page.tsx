@@ -17,14 +17,65 @@ export default function Intro() {
             <p
               className="text-bg-primary"
               style={{
+                fontWeight: "normal",
+                fontSize: "24px",
+                lineHeight: "1.7",
+              }}
+            >
+              Where Businesses Are Built
+            </p>
+            <p
+              className="text-bg-primary pt-6"
+              style={{
                 fontSize: "18px",
                 lineHeight: "1.7",
               }}
             >
-              Columna Group är en företagsgrupp som utvecklar och bygger företag
-              tillsammans med entreprenörer och verksamheter i olika skeden. Vi
-              arbetar långsiktigt med struktur, stabilitet och utveckling genom
-              våra bolag och partners.
+              Columna Group is a business-building platform focused on
+              developing companies, supporting entrepreneurs and creating
+              long-term value through active ownership and strategic
+              development.
+            </p>
+            <p
+              className="text-bg-primary pt-6"
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.7",
+              }}
+            >
+              Some businesses are started internally.
+            </p>
+            <p
+              className="text-bg-primary pt-6"
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.7",
+              }}
+            >
+              Others are built together with entrepreneurs who bring industry
+              expertise, operational leadership and the ambition to create
+              something meaningful.
+            </p>
+            <p
+              className="text-bg-primary pt-6"
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.7",
+              }}
+            >
+              Our role is to provide structure, strategic direction, business
+              development and access to a broader ecosystem of companies,
+              resources and relationships.
+            </p>
+            <p
+              className="text-bg-primary"
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.7",
+              }}
+            >
+              We believe that strong businesses are built by capable people
+              supported by the right structure.
             </p>
           </motion.div>
         </div>

@@ -87,16 +87,16 @@ export default function Hero() {
             Columna Group
             <ColumnaUnderline width="short" color="accent" />
           </h1>
-          <h2>Vi bygger strukturen bakom hållbara företag</h2>
+          <h2>Building Companies. Creating Value. For Generations</h2>
           <p>
-            En långsiktig partner för företag och entreprenörer som vill växa
-            med stabilitet, tydlig riktning och rätt förutsättningar från
-            början.
+            Columna Group develops, builds and supports businesses together with
+            entrepreneurs, operators and partners who share a long-term vision
+            for growth, profitability and sustainable value creation.
           </p>
         </section>
 
         <button className="px-12 py-4 border border-bg-primary text-bg-primary text-2xl hover:border-accent hover:text-[#c8a96a] hover:cursor-pointer transition-colors">
-          Inled dialog
+          Start a Conversation
         </button>
       </div>
     </section>
