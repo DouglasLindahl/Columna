@@ -67,7 +67,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <main className="overflow-x-hidden">
       <section
         id="home"
         className="h-screen relative flex flex-col justify-center items-center overflow-hidden"
@@ -379,7 +379,7 @@ export default function Home() {
           </div>
         </FadeIn>
       </section>
-    </>
+    </main>
   );
 }
 
