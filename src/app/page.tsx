@@ -70,7 +70,6 @@ export default function Home() {
     <main className="relative overflow-x-hidden bg-white text-bg-primary">
       <div className="fixed inset-0 bg-[url('/columna_background_four.jpeg')] bg-cover bg-center" />
       <div className="fixed inset-0 bg-white/20 pointer-events-none" />
-      <div className="fixed inset-y-0 left-0 w-[190px] bg-white/18 backdrop-blur-[1px] pointer-events-none" />
 
       <BrandMark />
       <PageMenu activeSection={activeSection} />
@@ -285,12 +284,12 @@ export default function Home() {
 function BrandMark() {
   return (
     <header className="fixed left-6 top-6 z-30 hidden sm:block lg:left-10">
-      <p className="text-bg-primary text-[13px] tracking-[0.44em] uppercase">
+      <h6 className="text-bg-primary text-[14px] tracking-[0.44em] uppercase">
         Columna Group
-      </p>
-      <p className="mt-2 text-bg-primary/42 text-[10px] tracking-[0.38em] uppercase">
+      </h6>
+      <h6 className="mt-2 text-bg-primary/42 text-[12px] tracking-[0.38em] uppercase">
         Structure. Stability. Growth.
-      </p>
+      </h6>
     </header>
   );
 }
