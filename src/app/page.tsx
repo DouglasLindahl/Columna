@@ -3,11 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
-import ColumnIcon from "./components/columnIcon/page";
-import ColumnaUnderline from "./components/columnaUnderline/page";
-
 const menuItems = [
-  { id: "home", label: "Home" },
+  { id: "home", label: "Hero" },
   { id: "columna", label: "Columna" },
   { id: "partnerships", label: "Partnerships" },
   { id: "advisory", label: "Advisory" },
@@ -24,20 +21,23 @@ const ecosystemItems = [
   "Logistics & Vehicle Operations",
   "Vehicle Inspection & Technical Services",
   "Service & Property Services",
-  "Natural Pools, Rainwater Harvesting Systems & Ecofriendly Water Features",
+  "Natural Pools, Rainwater harvesting systems & Ecofriendly water features",
   "Real Estate & Property Investments",
 ];
 
-const pageSectionClass =
-  "relative py-24 pl-6 pr-6 sm:pl-10 sm:pr-10 lg:pl-[220px] lg:pr-20 xl:pl-[280px] xl:pr-[120px] 2xl:pl-[320px] 2xl:pr-[180px]";
+const sectionClass =
+  "relative min-h-screen flex items-center px-6 py-28 sm:px-10 lg:pl-[260px] lg:pr-20 xl:pl-[300px] 2xl:pl-[360px]";
 
-const contentGridClass =
-  "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-[64px] items-center";
+const contentClass = "relative z-10 w-full max-w-[820px] text-left";
 
-const paragraphClass = "text-bg-primary text-base sm:text-[18px] leading-[1.7]";
+const eyebrowClass =
+  "mb-10 text-[10px] sm:text-[11px] tracking-[0.42em] uppercase text-accent/70 leading-[1.8]";
 
-const sectionTitleClass =
-  "text-bg-primary text-[32px] sm:text-[40px] leading-[1.3] font-medium";
+const titleClass =
+  "font-serif text-bg-primary text-[44px] sm:text-[64px] lg:text-[82px] xl:text-[92px] leading-[0.98] font-medium tracking-[-0.055em]";
+
+const paragraphClass =
+  "max-w-[710px] font-serif text-bg-primary/68 text-[18px] sm:text-[21px] lg:text-[23px] leading-[1.68] tracking-[-0.018em]";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
@@ -51,7 +51,7 @@ export default function Home() {
 
         if (
           section &&
-          section.getBoundingClientRect().top <= window.innerHeight * 0.4
+          section.getBoundingClientRect().top <= window.innerHeight * 0.45
         ) {
           currentSection = item;
         }
@@ -67,326 +67,242 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="overflow-x-hidden">
-      <section
-        id="home"
-        className="h-screen relative flex flex-col justify-center items-center overflow-hidden"
-      >
-        <div className="fixed inset-0 bg-[url('/columna_background_four.jpeg')] bg-cover bg-center" />
+    <main className="relative overflow-x-hidden bg-white text-bg-primary">
+      <div className="fixed inset-0 bg-[url('/columna_background_four.jpeg')] bg-cover bg-center" />
+      <div className="fixed inset-0 bg-white/20 pointer-events-none" />
+      <div className="fixed inset-y-0 left-0 w-[190px] bg-white/18 backdrop-blur-[1px] pointer-events-none" />
 
-        <PageMenu activeSection={activeSection} />
+      <BrandMark />
+      <PageMenu activeSection={activeSection} />
 
-        <div className="hidden lg:block fixed right-[-180px] top-1/2 -translate-y-1/2 z-[1] opacity-[0.04] pointer-events-none">
-          <ColumnIcon />
-        </div>
+      <section id="home" className={sectionClass}>
+        <FadeIn>
+          <div className={contentClass}>
+            <p className={eyebrowClass}>01 — Hero</p>
 
-        <div className="relative z-10 flex flex-col justify-center items-center gap-16 sm:gap-[140px] w-full">
-          <section className="text-center flex flex-col justify-center items-center gap-6 text-bg-primary w-full max-w-[980px] px-6">
-            <h1>
-              Columna Group
-              <ColumnaUnderline width="short" color="accent" />
+            <h1 className={titleClass}>
+              Building Companies.
+              <br />
+              Creating Value.
+              <br />
+              For Generations.
             </h1>
 
-            <h2>Building Companies. Creating Value. For Generations.</h2>
+            <div className="mt-10 border-l border-accent/35 pl-8">
+              <p className={paragraphClass}>
+                Columna Group develops, builds and supports businesses together
+                with entrepreneurs, operators and partners who share a long-term
+                vision for growth, profitability and sustainable value creation.
+              </p>
+            </div>
 
-            <p>
-              Columna Group develops, builds and supports businesses together
-              with entrepreneurs, operators and partners who share a long-term
-              vision for growth, profitability and sustainable value creation.
-            </p>
-          </section>
-
-          <CTAButton>Start a Conversation</CTAButton>
-        </div>
+            <div className="mt-12">
+              <TextButton>Start a Conversation</TextButton>
+            </div>
+          </div>
+        </FadeIn>
       </section>
 
-      <TextSection id="columna" sideLabel="COLUMNA" centered>
-        <p className="text-bg-primary text-[22px] sm:text-[24px] leading-[1.7]">
-          Where Businesses Are Built
-        </p>
-
+      <SimpleSection
+        id="columna"
+        eyebrow="02 — Where Businesses Are Built"
+        title="Where Businesses Are Built"
+      >
         <Paragraph>
           Columna Group is a business-building platform focused on developing
           companies, supporting entrepreneurs and creating long-term value
           through active ownership and strategic development.
         </Paragraph>
-
         <Paragraph>Some businesses are started internally.</Paragraph>
-
         <Paragraph>
           Others are built together with entrepreneurs who bring industry
           expertise, operational leadership and the ambition to create something
           meaningful.
         </Paragraph>
-
         <Paragraph>
           Our role is to provide structure, strategic direction, business
           development and access to a broader ecosystem of companies, resources
           and relationships.
         </Paragraph>
-
         <Paragraph>
           We believe that strong businesses are built by capable people
           supported by the right structure.
         </Paragraph>
-      </TextSection>
+      </SimpleSection>
 
-      <section id="partnerships" className={pageSectionClass}>
-        <SideLabel label="PARTNERSHIPS" />
-
-        <div className={contentGridClass}>
-          <FadeIn direction="left">
-            <h2 className={`${sectionTitleClass} mb-6`}>
-              Building Businesses Together
-            </h2>
-
-            <Paragraph>
-              Many successful businesses begin with a capable person, a strong
-              idea and the determination to build something of lasting value.
-            </Paragraph>
-
-            <Paragraph>
-              In selected opportunities, Columna becomes an active partner and
-              co-owner.
-            </Paragraph>
-
-            <Paragraph>
-              We contribute structure, experience, business development,
-              strategic guidance and long-term support while our partners focus
-              on leading and growing the business.
-            </Paragraph>
-
-            <Paragraph>The goal is simple:</Paragraph>
-
-            <Paragraph>
-              To build independent, profitable businesses capable of creating
-              value for decades.
-            </Paragraph>
-
-            <div className="mt-10">
-              <CTAButton>Learn More About Partnerships</CTAButton>
-            </div>
-          </FadeIn>
-
-          <FadeIn direction="right">
-            <ProcessList
-              items={[
-                "Idea",
-                "Partnership",
-                "Structure",
-                "Growth",
-                "Independent Company",
-              ]}
-            />
-          </FadeIn>
-        </div>
-      </section>
-
-      <section id="advisory" className={pageSectionClass}>
-        <SideLabel label="ADVISORY" />
-
-        <div className={contentGridClass}>
-          <FadeIn direction="left">
-            <ProblemSolution />
-          </FadeIn>
-
-          <FadeIn direction="right">
-            <h2 className={`${sectionTitleClass} mb-6`}>
-              When Progress Stalls
-            </h2>
-
-            <Paragraph>
-              Many businesses eventually reach a point where growth slows,
-              decisions become difficult and the same challenges continue to
-              return.
-            </Paragraph>
-
-            <Paragraph>The problem is rarely a lack of effort.</Paragraph>
-
-            <Paragraph>
-              More often it is a lack of clarity, structure, prioritisation or
-              direction.
-            </Paragraph>
-
-            <Paragraph>
-              Columna helps identify bottlenecks, simplify complexity and
-              restore momentum through practical, hands-on business development.
-            </Paragraph>
-
-            <Paragraph>
-              When progress stalls, we help businesses move forward again.
-            </Paragraph>
-
-            <div className="mt-10">
-              <CTAButton>Contact Us</CTAButton>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      <section id="platform" className={pageSectionClass}>
-        <SideLabel label="PLATFORM" />
-
-        <div className={contentGridClass}>
-          <FadeIn direction="left">
-            <h2 className={`${sectionTitleClass} mb-6`}>
-              A Platform for Long-Term Growth
-            </h2>
-
-            <Paragraph>
-              Every business faces different challenges at different stages of
-              its journey.
-            </Paragraph>
-
-            <Paragraph>
-              Columna provides a platform where businesses can access
-              experience, relationships, strategic support and operational
-              resources while remaining focused on their own customers and
-              markets.
-            </Paragraph>
-
-            <Paragraph>The objective is not to create dependence.</Paragraph>
-
-            <Paragraph>
-              The objective is to help businesses become stronger, more
-              profitable and increasingly independent over time.
-            </Paragraph>
-          </FadeIn>
-
-          <FadeIn direction="right">
-            <PlatformHub />
-          </FadeIn>
-        </div>
-      </section>
-
-      <section id="ecosystem" className={pageSectionClass}>
-        <SideLabel label="ECOSYSTEM" />
-
-        <div className="max-w-[1100px] mx-auto">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className={`${sectionTitleClass} inline-block`}>
-                Business Ecosystem
-              </h2>
-
-              <ColumnaUnderline width="short" color="accent" />
-
-              <p className="max-w-[760px] mx-auto mt-8 text-bg-primary text-base sm:text-[18px] leading-[1.7]">
-                Columna Group consists of a growing ecosystem of specialised
-                businesses operating across multiple industries.
-              </p>
-
-              <p className="max-w-[760px] mx-auto mt-4 text-bg-primary text-base sm:text-[18px] leading-[1.7]">
-                Each company focuses on its own expertise while benefiting from
-                shared knowledge, relationships and resources throughout the
-                group.
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {ecosystemItems.map((item) => (
-                <div
-                  key={item}
-                  className="border border-accent/30 p-6 text-bg-primary hover:border-accent hover:bg-accent/5 transition-all duration-300"
-                >
-                  <p className="text-base sm:text-[18px] leading-[1.5]">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <p className="max-w-[760px] mx-auto mt-12 text-center text-bg-primary text-base sm:text-[18px] leading-[1.7]">
-              Together, these businesses create an ecosystem designed to support
-              growth, profitability and long-term value creation.
-            </p>
-
-            <div className="mt-10 flex justify-center">
-              <CTAButton>Explore the Ecosystem</CTAButton>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      <section id="legacy" className={pageSectionClass}>
-        <SideLabel label="LEGACY" />
-
-        <div className={contentGridClass}>
-          <FadeIn direction="left">
-            <h2 className={`${sectionTitleClass} mb-6`}>
-              Built for the Long Run
-            </h2>
-
-            <Paragraph>
-              Columna is not focused on short-term opportunities or rapid exits.
-            </Paragraph>
-
-            <Paragraph>
-              Our approach is based on patience, profitability and sustainable
-              growth.
-            </Paragraph>
-
-            <Paragraph>
-              We seek businesses that solve real problems, create real value and
-              have the potential to remain relevant for generations.
-            </Paragraph>
-
-            <Paragraph>
-              The strongest companies are those that can continue growing long
-              after their founders step away from daily operations.
-            </Paragraph>
-
-            <Paragraph>That is the type of business we aim to build.</Paragraph>
-          </FadeIn>
-
-          <FadeIn direction="right">
-            <ProcessList
-              items={[
-                "Today",
-                "Growth",
-                "Profitability",
-                "Succession",
-                "Generations",
-              ]}
-            />
-          </FadeIn>
-        </div>
-      </section>
-
-      <section
-        id="contact"
-        className="min-h-screen relative flex items-center justify-center px-6 sm:px-10 lg:px-24 text-center"
+      <SimpleSection
+        id="partnerships"
+        eyebrow="03 — Building Businesses Together"
+        title="Building Businesses Together"
       >
-        <SideLabel label="CONTACT" />
+        <Paragraph>
+          Many successful businesses begin with a capable person, a strong idea
+          and the determination to build something of lasting value.
+        </Paragraph>
+        <Paragraph>
+          In selected opportunities, Columna becomes an active partner and
+          co-owner.
+        </Paragraph>
+        <Paragraph>
+          We contribute structure, experience, business development, strategic
+          guidance and long-term support while our partners focus on leading and
+          growing the business.
+        </Paragraph>
+        <Paragraph>The goal is simple:</Paragraph>
+        <Paragraph>
+          To build independent, profitable businesses capable of creating value
+          for decades.
+        </Paragraph>
+        <div className="mt-12">
+          <TextButton>Learn More About Partnerships</TextButton>
+        </div>
+      </SimpleSection>
 
-        <FadeIn>
-          <div className="max-w-[850px] mx-auto text-bg-primary">
-            <h2 className="text-[38px] sm:text-[56px] leading-[1.15] font-medium">
-              Let's Build Something Worth Keeping
-            </h2>
+      <SimpleSection
+        id="advisory"
+        eyebrow="04 — When Progress Stalls"
+        title="When Progress Stalls"
+      >
+        <Paragraph>
+          Many businesses eventually reach a point where growth slows, decisions
+          become difficult and the same challenges continue to return.
+        </Paragraph>
+        <Paragraph>The problem is rarely a lack of effort.</Paragraph>
+        <Paragraph>
+          More often it is a lack of clarity, structure, prioritisation or
+          direction.
+        </Paragraph>
+        <Paragraph>
+          Columna helps identify bottlenecks, simplify complexity and restore
+          momentum through practical, hands-on business development.
+        </Paragraph>
+        <Paragraph>
+          When progress stalls, we help businesses move forward again.
+        </Paragraph>
+        <div className="mt-12">
+          <TextButton>Contact Us</TextButton>
+        </div>
+      </SimpleSection>
 
-            <p className="mt-8 text-lg sm:text-[20px] leading-[1.7]">
-              Whether you are building a company, exploring a new opportunity or
-              looking for a long-term business partner, we would be happy to
-              start a conversation.
-            </p>
+      <SimpleSection
+        id="platform"
+        eyebrow="05 — A Platform for Long-Term Growth"
+        title="A Platform for Long-Term Growth"
+      >
+        <Paragraph>
+          Every business faces different challenges at different stages of its
+          journey.
+        </Paragraph>
+        <Paragraph>
+          Columna provides a platform where businesses can access experience,
+          relationships, strategic support and operational resources while
+          remaining focused on their own customers and markets.
+        </Paragraph>
+        <Paragraph>The objective is not to create dependence.</Paragraph>
+        <Paragraph>
+          The objective is to help businesses become stronger, more profitable
+          and increasingly independent over time.
+        </Paragraph>
+      </SimpleSection>
 
-            <div className="mt-12 flex justify-center">
-              <CTAButton>Contact Us</CTAButton>
-            </div>
-          </div>
-        </FadeIn>
-      </section>
+      <SimpleSection
+        id="ecosystem"
+        eyebrow="06 — Business Ecosystem"
+        title="Business Ecosystem"
+      >
+        <Paragraph>
+          Columna Group consists of a growing ecosystem of specialised
+          businesses operating across multiple industries.
+        </Paragraph>
+        <Paragraph>
+          Each company focuses on its own expertise while benefiting from shared
+          knowledge, relationships and resources throughout the group.
+        </Paragraph>
+        <Paragraph>Current and future business areas include:</Paragraph>
+
+        <ul className="mt-10 max-w-[720px] divide-y divide-bg-primary/10 border-y border-bg-primary/10">
+          {ecosystemItems.map((item) => (
+            <li
+              key={item}
+              className="flex gap-5 py-5 font-serif text-bg-primary/68 text-[18px] sm:text-[21px] leading-[1.45] tracking-[-0.018em]"
+            >
+              <span className="mt-[0.72em] h-px w-6 shrink-0 bg-accent/60" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <Paragraph>
+          Together, these businesses create an ecosystem designed to support
+          growth, profitability and long-term value creation.
+        </Paragraph>
+        <div className="mt-12">
+          <TextButton>Explore the Ecosystem</TextButton>
+        </div>
+      </SimpleSection>
+
+      <SimpleSection
+        id="legacy"
+        eyebrow="07 — Built for the Long Run"
+        title="Built for the Long Run"
+      >
+        <Paragraph>
+          Columna is not focused on short-term opportunities or rapid exits.
+        </Paragraph>
+        <Paragraph>
+          Our approach is based on patience, profitability and sustainable
+          growth.
+        </Paragraph>
+        <Paragraph>
+          We seek businesses that solve real problems, create real value and
+          have the potential to remain relevant for generations.
+        </Paragraph>
+        <Paragraph>
+          The strongest companies are those that can continue growing long after
+          their founders step away from daily operations.
+        </Paragraph>
+        <Paragraph>That is the type of business we aim to build.</Paragraph>
+      </SimpleSection>
+
+      <SimpleSection
+        id="contact"
+        eyebrow="08 — Contact"
+        title="Let's Build Something Worth Keeping"
+      >
+        <Paragraph>
+          Whether you are building a company, exploring a new opportunity or
+          looking for a long-term business partner, we would be happy to start a
+          conversation.
+        </Paragraph>
+        <div className="mt-12">
+          <TextButton>Contact Us</TextButton>
+        </div>
+      </SimpleSection>
     </main>
+  );
+}
+
+function BrandMark() {
+  return (
+    <header className="fixed left-6 top-6 z-30 hidden sm:block lg:left-10">
+      <p className="text-bg-primary text-[13px] tracking-[0.44em] uppercase">
+        Columna Group
+      </p>
+      <p className="mt-2 text-bg-primary/42 text-[10px] tracking-[0.38em] uppercase">
+        Structure. Stability. Growth.
+      </p>
+    </header>
   );
 }
 
 function PageMenu({ activeSection }: { activeSection: string }) {
   return (
-    <aside className="hidden lg:block fixed left-0 bottom-20 z-20 h-screen">
-      <nav className="h-full flex flex-col justify-center gap-[22px] pl-[40px] xl:pl-[60px]">
+    <aside className="hidden lg:block fixed left-0 top-0 z-20 h-screen w-[190px] pointer-events-none">
+      <nav className="relative ml-[62px] h-full flex flex-col justify-center gap-[22px] pointer-events-auto">
+        <div className="absolute left-[-24px] top-[18%] bottom-[18%] w-px bg-accent/28" />
+        <div className="absolute left-[-27px] top-[18%] h-px w-[7px] bg-accent/55" />
+        <div className="absolute left-[-27px] bottom-[18%] h-px w-[7px] bg-accent/55" />
+
         {menuItems.map((item, index) => {
           const isActive = activeSection === item.id;
 
@@ -399,27 +315,22 @@ function PageMenu({ activeSection }: { activeSection: string }) {
                   behavior: "smooth",
                 })
               }
-              className="text-left group flex items-center gap-4"
+              className="group w-fit text-left"
+              aria-current={isActive ? "true" : undefined}
             >
               <span
-                className={`text-[12px] tracking-[0.25em] transition-colors ${
-                  isActive ? "text-accent" : "text-accent/40"
+                className={`block text-[9px] tracking-[0.32em] transition-colors duration-300 ${
+                  isActive ? "text-accent" : "text-accent/35"
                 }`}
               >
                 {String(index + 1).padStart(2, "0")}
               </span>
 
               <span
-                className={`h-px w-6 transition-colors ${
-                  isActive ? "bg-accent" : "bg-accent/25"
-                }`}
-              />
-
-              <span
-                className={`font-serif text-[17px] leading-none transition-colors ${
+                className={`mt-1 block font-serif text-[16px] leading-none transition-colors duration-300 ${
                   isActive
                     ? "text-bg-primary"
-                    : "text-bg-primary/25 group-hover:text-bg-primary/50"
+                    : "text-bg-primary/32 group-hover:text-bg-primary/60"
                 }`}
               >
                 {item.label}
@@ -432,181 +343,53 @@ function PageMenu({ activeSection }: { activeSection: string }) {
   );
 }
 
-function TextSection({
+function SimpleSection({
   id,
-  sideLabel,
-  centered = false,
+  eyebrow,
+  title,
   children,
 }: {
   id: string;
-  sideLabel: string;
-  centered?: boolean;
+  eyebrow: string;
+  title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={pageSectionClass}>
-      <SideLabel label={sideLabel} />
-
-      <div className="max-w-[1200px] mx-auto">
-        <FadeIn>
-          <div
-            className={`max-w-[760px] mx-auto ${centered ? "text-center" : ""}`}
-          >
-            {children}
-          </div>
-        </FadeIn>
-      </div>
+    <section id={id} className={sectionClass}>
+      <FadeIn>
+        <div className={contentClass}>
+          <p className={eyebrowClass}>{eyebrow}</p>
+          <h2 className={titleClass}>{title}</h2>
+          <div className="mt-10 border-l border-accent/35 pl-8">{children}</div>
+        </div>
+      </FadeIn>
     </section>
   );
 }
 
 function Paragraph({ children }: { children: React.ReactNode }) {
-  return <p className={`${paragraphClass} pt-6`}>{children}</p>;
+  return <p className={`${paragraphClass} mt-7 first:mt-0`}>{children}</p>;
 }
 
-function CTAButton({ children }: { children: React.ReactNode }) {
+function TextButton({ children }: { children: React.ReactNode }) {
   return (
-    <button className="px-8 sm:px-12 py-4 border border-bg-primary text-bg-primary text-lg sm:text-2xl hover:border-accent hover:text-accent hover:cursor-pointer transition-colors">
-      {children}
+    <button className="group inline-flex items-center gap-4 font-serif text-bg-primary text-[17px] sm:text-[19px] tracking-[0.18em] uppercase transition-colors hover:text-accent">
+      <span>{children}</span>
+      <span className="h-px w-12 bg-bg-primary/50 transition-all duration-300 group-hover:w-16 group-hover:bg-accent" />
     </button>
   );
 }
 
-function SideLabel({ label }: { label: string }) {
-  return (
-    <div className="hidden xl:block pointer-events-none absolute right-10 top-1/2 -translate-y-1/2 rotate-[-90deg] translate-x-1/2 select-none">
-      <h5 className="text-[64px] font-medium tracking-[0.3em] text-black/5 whitespace-nowrap">
-        {label}
-      </h5>
-    </div>
-  );
-}
-
-function FadeIn({
-  children,
-  direction,
-}: {
-  children: React.ReactNode;
-  direction?: "left" | "right";
-}) {
+function FadeIn({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        x: direction === "left" ? -30 : direction === "right" ? 30 : 0,
-        y: direction ? 0 : 30,
-      }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-90px" }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
+      className="w-full"
     >
       {children}
     </motion.div>
-  );
-}
-
-function ProcessList({ items }: { items: string[] }) {
-  return (
-    <div className="flex flex-col items-center w-full">
-      {items.map((item, index) => (
-        <div key={item} className="flex flex-col items-center w-full">
-          <div className="w-full max-w-[280px] border border-accent/40 px-6 sm:px-8 py-5 text-center text-bg-primary text-lg sm:text-[20px] hover:border-accent transition-colors">
-            {item}
-          </div>
-
-          {index !== items.length - 1 && (
-            <div className="h-10 w-px bg-accent/40" />
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function ProblemSolution() {
-  const problems = [
-    "Slow growth",
-    "Constant firefighting",
-    "Poor priorities",
-    "Operational bottlenecks",
-  ];
-
-  const outcomes = [
-    "Clarity",
-    "Structure",
-    "Better decisions",
-    "Sustainable growth",
-  ];
-
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <div className="border border-bg-primary/20 p-6 sm:p-8">
-        <h3 className="text-bg-primary text-[22px] sm:text-[24px] mb-6">
-          Business Today
-        </h3>
-
-        <ul className="space-y-4">
-          {problems.map((item) => (
-            <li
-              key={item}
-              className="text-bg-primary/70 text-base sm:text-[18px]"
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="border border-accent/40 p-6 sm:p-8 bg-accent/5">
-        <h3 className="text-bg-primary text-[22px] sm:text-[24px] mb-6">
-          With Columna
-        </h3>
-
-        <ul className="space-y-4">
-          {outcomes.map((item) => (
-            <li key={item} className="text-bg-primary text-base sm:text-[18px]">
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-function PlatformHub() {
-  const items = [
-    "Experience",
-    "Relationships",
-    "Strategic Support",
-    "Operational Resources",
-    "Business Development",
-  ];
-
-  return (
-    <div className="relative min-h-[420px] flex items-center justify-center">
-      <div className="absolute w-[150px] sm:w-[180px] h-[150px] sm:h-[180px] rounded-full border border-accent/50 flex items-center justify-center text-center text-bg-primary text-[20px] sm:text-[22px]">
-        Columna
-      </div>
-
-      {items.map((item, index) => {
-        const positions = [
-          "top-0 left-1/2 -translate-x-1/2",
-          "right-0 top-1/2 -translate-y-1/2",
-          "bottom-0 left-1/2 -translate-x-1/2",
-          "left-0 top-1/2 -translate-y-1/2",
-          "top-[76px] right-[35px] sm:right-[60px]",
-        ];
-
-        return (
-          <div
-            key={item}
-            className={`absolute ${positions[index]} border border-accent/30 px-4 sm:px-6 py-3 sm:py-4 text-bg-primary text-sm sm:text-base bg-white/5 text-center`}
-          >
-            {item}
-          </div>
-        );
-      })}
-    </div>
   );
 }
